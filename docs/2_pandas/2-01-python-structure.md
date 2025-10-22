@@ -191,9 +191,12 @@ This uses the [
 from Python.
 
 ```python
-from importlib.resources import files
+from importlib import resources
 
-paralympics_datafile_csv = files("tutorialpkg.data").joinpath("paralympics_events_prepared.csv")
+from activities import data
+
+
+paralympics_data_file_csv = resources.files(data).joinpath("paralympics_raw.csv")
 ```
 
 ## ACTIVITY: Add code to reference a .csv file
@@ -203,7 +206,7 @@ In the Python module you created earlier add code to locate the data file `paral
 Try using `pathlib.Path` and the `importlib.resources` approach i.e. do the activity twice using a different approach
 each time.
 
-_Optionally_, check you can access the file by opening and printing a line e.g.:
+_Optional_, check you can access the file by opening and printing a line e.g.:
 
 ```python
 import csv
